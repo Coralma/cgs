@@ -1,0 +1,1 @@
+INSERT INTO `t_person`(`username`,`password`,`job`) VALUES ('Coral','110','IT');

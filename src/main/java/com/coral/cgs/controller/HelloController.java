@@ -1,12 +1,12 @@
 package com.coral.cgs.controller;
 
 import com.coral.cgs.model.Person;
+import com.coral.cgs.service.IPersonService;
+import com.coral.cgs.service.impl.PersonServiceImpl;
 import io.swagger.annotations.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  */
@@ -26,7 +26,7 @@ public class HelloController {
     @ResponseBody
     @RequestMapping(value="/json", method= RequestMethod.GET)
     public Person testJson() {
-        Person person = new Person("gude", "111111");
+        Person person = new Person("testJson", "111111");
         return person;
     }
 }

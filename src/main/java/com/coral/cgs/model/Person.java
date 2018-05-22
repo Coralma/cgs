@@ -12,6 +12,8 @@ import java.io.Serializable;
 @ApiModel(description= "返回用户数据")
 public class Person implements Serializable {
 
+    @ApiModelProperty(value = "用户ID",required=false)
+    private Long id;
     @ApiModelProperty(value = "用户名",required=true)
     private String username;
     @ApiModelProperty(value = "密码",required=true)
@@ -26,6 +28,14 @@ public class Person implements Serializable {
     public Person(String username, String password) {
         this.username = username;
         this.password = password;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
