@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coral.cgs.mapper.VehiclePolicyMapper">
+    <!-- 自定义返回结果集 -->
+    <resultMap id="vehiclePolicyMap" type="VehiclePolicyVO">
+        <id property="policyId" column="policyId" javaType="java.lang.Long"></id>
+        <result property="policyNo" column="policyNo" javaType="java.lang.String"></result>
+        <result property="effectiveDate" column="effectiveDate" javaType="java.util.Date"></result>
+        <result property="expiryDate" column="expiryDate" javaType="java.util.Date"></result>
+        <result property="status" column="status" javaType="java.lang.String"></result>
+        <result property="policyHolderName" column="policyHolderName" javaType="java.lang.String"></result>
+        <result property="gender" column="gender" javaType="java.lang.String"></result>
+        <result property="birthday" column="birthday" javaType="java.util.Date"></result>
+        <result property="idType" column="idType" javaType="java.lang.String"></result>
+        <result property="idNo" column="idNo" javaType="java.lang.String"></result>
+        <result property="address" column="address" javaType="java.lang.String"></result>
+        <result property="postNo" column="postNo" javaType="java.lang.String"></result>
+        <result property="mobilePhone" column="mobilePhone" javaType="java.lang.String"></result>
+        <result property="companyPhone" column="companyPhone" javaType="java.lang.String"></result>
+        <result property="homePhone" column="homePhone" javaType="java.lang.String"></result>
+        <result property="si" column="si" javaType="java.math.BigDecimal"></result>
+        <result property="premium" column="premium" javaType="java.math.BigDecimal"></result>
+    </resultMap>
+
+</mapper>

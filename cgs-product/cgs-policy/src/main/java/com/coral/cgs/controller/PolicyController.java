@@ -2,13 +2,14 @@ package com.coral.cgs.controller;
 
 import com.coral.cgs.model.vehicle.VehiclePolicyResponse;
 import com.coral.cgs.model.vehicle.VehiclePolicyVO;
+import com.coral.cgs.service.IPolicyService;
+import com.coral.cgs.service.impl.PolicyServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 
@@ -17,11 +18,22 @@ import java.math.BigDecimal;
 @RequestMapping("/policy")
 public class PolicyController {
 
+    @Autowired
+    IPolicyService policyService;
+
+    @ApiOperation("保单保存接口")
+    @ResponseBody
+    @RequestMapping(value="/load", method= RequestMethod.GET)
+    public VehiclePolicyResponse loadPolicy(@ApiParam(name = "policyNo", value = "保单号", required = true) @RequestParam("policyNo") String policyNo) {
+        VehiclePolicyVO vehiclePolicyVO = policyService.load(policyNo);
+        return successResponse(vehiclePolicyVO);
+    }
+
     @ApiOperation("保单保存接口")
     @ResponseBody
     @RequestMapping(value="/save", method= RequestMethod.POST)
     public VehiclePolicyResponse savePolicy(@RequestBody VehiclePolicyVO vehiclePolicyVO) {
-        vehiclePolicyVO.setStatus("1");
+        policyService.save(vehiclePolicyVO);
         return successResponse(vehiclePolicyVO);
     }
 
