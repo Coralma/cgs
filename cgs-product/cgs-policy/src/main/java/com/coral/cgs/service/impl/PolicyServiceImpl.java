@@ -2,6 +2,7 @@ package com.coral.cgs.service.impl;
 
 import com.coral.cgs.mapper.PersonMapper;
 import com.coral.cgs.mapper.SequenceMapper;
+import com.coral.cgs.mapper.VehicleInsuredMapper;
 import com.coral.cgs.mapper.VehiclePolicyMapper;
 import com.coral.cgs.model.vehicle.VehiclePolicyVO;
 import com.coral.cgs.service.IPolicyService;
@@ -19,6 +20,8 @@ public class PolicyServiceImpl implements IPolicyService {
     private SequenceMapper sequenceMapper;
     @Resource
     private VehiclePolicyMapper vehiclePolicyMapper;
+    @Resource
+    private VehicleInsuredMapper vehicleInsuredMapper;
 
     public void save(VehiclePolicyVO vehiclePolicyVO) {
         if(vehiclePolicyVO.getPolicyNo() == null) {

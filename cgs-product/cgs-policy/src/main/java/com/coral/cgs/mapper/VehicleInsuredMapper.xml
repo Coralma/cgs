@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coral.cgs.mapper.VehicleInsuredMapper">
+    <!-- 自定义返回结果集 -->
+    <resultMap id="vehicleInsuredMap" type="VehicleInsuredVO">
+        <id property="insuredId" column="insuredId" javaType="java.lang.Long"></id>
+        <result property="policyId" column="policyId" javaType="java.lang.Long"></result>
+        <result property="newCar" column="newCar" javaType="java.lang.String"></result>
+        <result property="vehicleNo" column="vehicleNo" javaType="java.lang.String"></result>
+        <result property="vehicleBand" column="vehicleBand" javaType="java.lang.String"></result>
+        <result property="vehicleModel" column="vehicleModel" javaType="java.lang.String"></result>
+        <result property="engineNo" column="engineNo" javaType="java.lang.String"></result>
+        <result property="carFrameNo" column="carFrameNo" javaType="java.lang.String"></result>
+        <result property="usageType" column="usageType" javaType="java.lang.String"></result>
+        <result property="belongType" column="belongType" javaType="java.lang.String"></result>
+        <result property="registerDate" column="registerDate" javaType="java.util.Date"></result>
+        <result property="bodyType" column="bodyType" javaType="java.lang.String"></result>
+        <result property="premium" column="premium" javaType="java.math.BigDecimal"></result>
+        <result property="price" column="price" javaType="java.math.BigDecimal"></result>
+        <result property="si" column="si" javaType="java.math.BigDecimal"></result>
+    </resultMap>
+
+</mapper>

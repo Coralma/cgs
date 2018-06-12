@@ -14,8 +14,10 @@ public class VehicleInsuredVO implements Serializable {
 
     @ApiModelProperty(value = "车险标的ID", required=true)
     Long insuredId;
+    @ApiModelProperty(value = "车险标的ID", required=true)
+    Long policyId;
     @ApiModelProperty(value = "是否新车", required=true)
-    Boolean isNew = false;
+    String newCar = "1";
     @ApiModelProperty(value = "车牌", required=true)
     String vehicleNo;
     @ApiModelProperty(value = "车辆厂牌", required=true)
@@ -51,12 +53,12 @@ public class VehicleInsuredVO implements Serializable {
         this.insuredId = insuredId;
     }
 
-    public Boolean getIsNew() {
-        return isNew;
+    public String getNewCar() {
+        return newCar;
     }
 
-    public void setIsNew(Boolean isNew) {
-        this.isNew = isNew;
+    public void setNewCar(String newCar) {
+        this.newCar = newCar;
     }
 
     public String getVehicleNo() {
@@ -161,5 +163,13 @@ public class VehicleInsuredVO implements Serializable {
 
     public void setVehicleCoverageVOs(List<VehicleCoverageVO> vehicleCoverageVOs) {
         this.vehicleCoverageVOs = vehicleCoverageVOs;
+    }
+
+    public Long getPolicyId() {
+        return policyId;
+    }
+
+    public void setPolicyId(Long policyId) {
+        this.policyId = policyId;
     }
 }
