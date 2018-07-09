@@ -7,5 +7,5 @@ import com.coral.cgs.model.User;
  */
 public interface IUserService {
 
-    int insertUser(User user);
+    Long insertUser(User user);
 }

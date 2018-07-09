@@ -24,8 +24,8 @@ public class UserServiceImpl implements IUserService {
     @Resource
     private AddressMapper addressMapper;
 
-    public int insertUser(User user) {
-        int u = userMapper.insertUser(user);
+    public Long insertUser(User user) {
+        Long u = userMapper.insertUser(user);
         if(user.getAddressList() != null) {
             for (Address address : user.getAddressList()) {
                 addressMapper.insertAddress(address, user.getUserId());
